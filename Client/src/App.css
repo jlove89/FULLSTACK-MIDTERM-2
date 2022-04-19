@@ -7,6 +7,18 @@
   pointer-events: none;
 }
 
+.top-section{
+  background-repeat: no-repeat;
+  /* position: relative; */
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-position: right center;
+  /* background-image: url(); */
+  background-color: #deedd6;
+  background-size: auto;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
