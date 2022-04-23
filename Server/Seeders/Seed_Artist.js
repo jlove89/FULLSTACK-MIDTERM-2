@@ -18,5 +18,3 @@ db.Artist.create([{
     console.log('Failure!', err)
     process.exit()
 })
-
-
