@@ -1,14 +1,19 @@
-MEETING 1  
-                                    PROJECT OVERVIEW
+# Asheville Music Databse
 
-PROFESSIONAL ARTISTS TO WORK WITH:
+This project was created with the idea to store contact information for artists of all types. This would allow Event Organizers to contact artists in the area or abroad to schedule events. 
 
-Purpose: to provide an updatable, front-end database that provides all useful information on artists of various types in particular cities
+## Functionality 
 
-INDEX PAGE: a div that will contain a list of cities/states that are clickable. the onclick will render a new component that charts a list of artists in that city/state. index page will also include a form to add a new city/state and some whatever deco.
+Users are greeted by the Home screen and then given options to learn more about the database in the 'About' section, or head to the database in the 'Artists' section.
 
-City/State Page(component): contains a charted list of artists residing in that area. at the bottom of the chart will be a form to add a new artist. the form will promp the user to input name, contact info, artist type (dropdown menu), agnecy. NAME field will be clickable per entity which will display the links to the artists personal platforms. Top of chart will contain a filter option where you may filter the artists by type or search by name. Beside each entity will have an update and delete button. 
+## Artists Database
 
-I (zach) can provide the initial information for the artists in asheville just so we have some seed data to work with. 
+The database lists artists in the Asheville area and provides contact information in order to make them more accessible for booking. 
 
-NEXT MEETING OBJECTIVES: delegate first tasks and formulate action plan# FULLSTACK-MIDTERM-2
+New artists are able to be added by clicking `Add Artist`.
+
+Artist information can updated or corrected by clicking the `Edit` button, located to the left of the Artist's information.
+
+Artist information can also be deleted from the database by clicking `Delete`, located beside the `Edit` button.
+
+Please enjoy the database and use responsibly! [DatabaseName](Database link)
