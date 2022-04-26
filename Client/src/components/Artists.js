@@ -113,7 +113,7 @@ const Table = () => {
     setEditArtist(formValues);
   };
 
-  const handleCancleClick = () => {
+  const handleCancelClick = () => {
     setEditArtistId(null)
   };
 
@@ -149,7 +149,7 @@ const Table = () => {
                 {editArtistId === artist.id ? (
                   <EditArtistData editArtist={editArtist}
                     handleEditArtists={handleEditArtist}
-                    handleCancleClick={handleCancleClick}
+                    handleCancelClick={handleCancelClick}
                   />
                 ) : (
                   <ReadOnlyArtistData

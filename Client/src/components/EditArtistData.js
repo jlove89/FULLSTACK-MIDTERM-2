@@ -1,6 +1,6 @@
 import React from 'react'
 
-const EditArtistData = (editArtist, handleAddArtist, handleCancleClick) => {
+const EditArtistData = ({ editArtist, handleAddArtist, handleCancelClick }) => {
     return (
         <tr>
             <td>
@@ -75,7 +75,7 @@ const EditArtistData = (editArtist, handleAddArtist, handleCancleClick) => {
             </td>
             <td>
                 <button type="submit">Save</button>
-                <button type="button" onClick={handleCancleClick}>Cancel</button>
+                <button type="button" onClick={handleCancelClick}>Cancel</button>
             </td>
         </tr>
     )
