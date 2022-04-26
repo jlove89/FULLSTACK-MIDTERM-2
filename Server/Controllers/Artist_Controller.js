@@ -1,25 +1,73 @@
+// Dependencies
 const router = require('express').Router()
-//const findArtistByArt_Type = require('express').Router
-//const findArtistByName = require('express').Router
-const Artist = require('../Models/ArtistModel')
 
+// Configuration
+const Artist = require('../Models/ArtistModel.js')
 
+// Index
 router.get('/', (req, res) => {
-
+    Artist.find()
+        .then((Artists) => {
+            return res.json(Artists)
+        })
+        .catch((err) => {
+            console.log(err)
+            res.status(404)
+            res.json({ 'message': 'Artist not playing' })
+        })
 })
 
-
-router.post('/', (req,res) => {
-
+// Create(POST)
+router.post('/', (req, res) => {
+    Artist.create(req.body)
+        .then((Artist) => {
+            return res.json(Artist)
+        })
+        .catch((err) => {
+            res.status(404)
+            res.json({ 'message': 'Artist not playing' })
+        })
 })
 
+// Show
+router.get('/:id', (req,res) => {
+    Artist.findById(req.params.id)
+    .then((Artist) => {
+        return res.json(Artist)
+    })
+    .catch((err) => {
+        res.status(404)
+        res.json({ 'message': 'Artist not playing' })
+    })
+})
 
+// Add/New
+router.get('/new', (req, res) => {
+    return res.json(Artist)
+})
+
+// Update/Edit
 router.put('/', (req, res) => {
-
+    Artist.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        .then((Artist) => {
+            return res.json(Artist)
+        })
+        .catch((err) => {
+            res.status(404)
+            res.json({ 'message': 'Artist not playing' })
+        })
 })
 
-router.delete('/', (req, res) => {
-    
+// Delete
+router.delete('/:id', (req, res) => {
+    Artist.findByIdAndDelete(req.params.id)
+        .then((Artist) => {
+            return res.json(Artist)
+        })
+        .catch((err) => {
+            res.status(404)
+            res.json({ 'message': 'Artist not playing' })
+        })
 })
 
 module.exports = router
