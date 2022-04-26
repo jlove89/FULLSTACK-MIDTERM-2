@@ -4,7 +4,7 @@ This project was created with the idea to store contact information for artists 
 
 ## Functionality 
 
-Users are greeted by the Home screen and then given options to learn more about the database in the 'About' section, or head to the database in the 'Artists' section.
+Users are greeted by the Home screen and then given options to learn more about the database in the `**About**` section, or head to the database in the `**Artists**` section.
 
 ## Artists Database
 
@@ -16,4 +16,4 @@ Artist information can updated or corrected by clicking the `Edit` button, locat
 
 Artist information can also be deleted from the database by clicking `Delete`, located beside the `Edit` button.
 
-Please enjoy the database and use responsibly! [DatabaseName](Database link)
+Please enjoy the database and use responsibly! [Placeholder DatabaseName: redirects to this page](https://github.com/ZacharyDick828/FULLSTACK-MIDTERM-2)
