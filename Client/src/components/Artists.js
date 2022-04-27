@@ -5,6 +5,8 @@ import ReadOnlyArtistData from './ReadOnlyArtistData';
 import EditArtistData from './EditArtistData';
 
 
+
+
 const Table = () => {
   const [artists, setArtists] = useState(data);
   const [addArtists, setAddArtists] = useState({
@@ -156,7 +158,6 @@ const Table = () => {
                     artist={artist}
                     handleEditClick={handleEditClick}
                     handleDeleteClick={handleDeleteClick}
-
                   />
                 )}
               </Fragment>
