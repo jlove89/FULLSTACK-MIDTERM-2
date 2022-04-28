@@ -7,7 +7,7 @@ import axios from 'axios'
 
 
 const Table = () => {
-  const saturate =  async () => {
+  const saturate = async () => {
     const response = await axios.get('http://localhost:3001/artists')
     console.log("response: ", response)
     setArtists(response.data)
@@ -23,7 +23,7 @@ const Table = () => {
     agency: ''
   })
 
-  useEffect(()=> {
+  useEffect(() => {
     saturate()
   }, [])
 
@@ -41,7 +41,7 @@ const Table = () => {
 
   const handleAddArtists = async (event) => {
     event.preventDefault();
-   
+
     const fieldName = event.target.getAttribute('name');
     const fieldValue = event.target.value;
 
@@ -80,19 +80,20 @@ const Table = () => {
     setArtists(newArtists)
   };
 
-  const handleEditArtistSubmit = (event) => {
+  const handleEditArtistSubmit = async (event) => {
     event.preventDefault();
-
     const editedArtist = {
-      id: editArtistId,
+      // id: editArtistId,
       name: editArtist.name,
       moniker: editArtist.moniker,
       art_type: editArtist.art_type,
       genre: editArtist.genre,
       phone: editArtist.phone,
       email: editArtist.email,
-      agency: editArtist.agency,
+      agency: editArtist.agency
     }
+    const response = await axios.put(`http://localhost:3001/artists/${editArtistId}`)
+    console.log("response: ", response)
 
     const newArtists = [...artists];
 
@@ -101,8 +102,15 @@ const Table = () => {
     newArtists[index] = editedArtist;
 
     setArtists(newArtists);
-    setEditArtist()
-
+    setEditArtist({
+      name: '',
+      moniker: '',
+      art_type: '',
+      genre: '',
+      phone: '',
+      email: '',
+      agency: ''
+    })
   };
 
   const handleEditClick = (event, artist) => {
