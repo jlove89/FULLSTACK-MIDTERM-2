@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 })
 
 // Create(POST)
-router.post('/', (req, res) => {
+router.post('/new', (req, res) => {
     Artist.create(req.body)
         .then((Artist) => {
             return res.json(Artist)
@@ -47,7 +47,7 @@ router.get('/new', (req, res) => {
 })
 
 // Update/Edit
-router.put('/', (req, res) => {
+router.put('/:id', (req, res) => {
     Artist.findByIdAndUpdate(req.params.id, req.body, { new: true })
         .then((Artist) => {
             return res.json(Artist)
