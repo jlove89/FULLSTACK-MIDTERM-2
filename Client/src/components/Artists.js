@@ -1,14 +1,18 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, Fragment, useEffect } from 'react'
 import data from "../mock-data.json";
 import { nanoid } from 'nanoid';
 import ReadOnlyArtistData from './ReadOnlyArtistData';
 import EditArtistData from './EditArtistData';
-
-
+import axios from 'axios'
 
 
 const Table = () => {
-  const [artists, setArtists] = useState(data);
+  const saturate =  async () => {
+    const response = await axios.get('http://localhost:3001/artists')
+    console.log("response: ", response)
+    setArtists(response.data)
+  }
+  const [artists, setArtists] = useState([]);
   const [addArtists, setAddArtists] = useState({
     name: '',
     moniker: '',
@@ -18,6 +22,10 @@ const Table = () => {
     email: '',
     agency: ''
   })
+
+  useEffect(()=> {
+    saturate()
+  }, [])
 
   const [editArtist, setEditArtist] = useState({
     name: '',
@@ -31,9 +39,9 @@ const Table = () => {
 
   const [editArtistId, setEditArtistId] = useState(null);
 
-  const handleAddArtists = (event) => {
+  const handleAddArtists = async (event) => {
     event.preventDefault();
-
+   
     const fieldName = event.target.getAttribute('name');
     const fieldValue = event.target.value;
 
@@ -55,9 +63,8 @@ const Table = () => {
     setEditArtist(newArtistData)
   }
 
-  const handleNewArtistSubmit = (event) => {
+  const handleNewArtistSubmit = async (event) => {
     event.preventDefault();
-
     const newArtist = {
       id: nanoid(),
       name: addArtists.name,
@@ -131,7 +138,7 @@ const Table = () => {
 
   return (
     <div className="app-container">
-      <form onSubmit={handleEditArtistSubmit}>
+      <form onChange={handleEditArtistSubmit}>
         <table>
           <thead>
             <tr>
