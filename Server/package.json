@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "dev": "netlify dev"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,5 @@
     "express": "^4.17.3",
     "mongoose": "^6.3.0"
   },
-  "devDependencies": {
-    "netlify-cli": "^10.1.0"
+  "devDependencies": {}
   }
-}
